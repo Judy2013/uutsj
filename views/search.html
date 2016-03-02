@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="renderer" content="webkit">
+	<meta charset="utf-8">
+	<meta http-equiv="X-XA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimum-scale=1.0,maximum-scale=1.0">
+	<link rel="stylesheet" href="../public/css/main.css">
+	<script src="../public/js/jquery.min.js"></script>
+	<script src="../public/js/iscroll.js"></script>
+	<script src="../public/js/handlebars.min.js"></script>
+	<script src="../public/js/main.min.js"></script>
+	<style>
+	#wrapper{top: 90px;}
+	</style>
+</head>
+<body>
+	<header class="header" style="padding-left:15px;">
+		<a class="icon icon-r"><span class="font16">确定</span></a>
+		<div class="title">
+			<div class="form-ctrl">
+				<span class="iconfont icon-zoom"></span>
+				<input type="text" class="input">
+			</div>
+		</div>
+	</header>
+	<nav class="p10 text-center">
+		<span class="text-grey">一共<span class="text-pink">2</span>个相关结果</span>
+	</nav>
+	<div id="wrapper" class="wrapper">
+		<div>
+			<ul class="list-result" id="result">
+				<li>
+					<a href="#"><img src="../public/images/img750_01.png" alt=""></a>
+					<div class="desc">
+						<div class="desc-l">
+							<p class="desc-title"><span class="descTitle">2016年新品新春特惠专场</span> <span class="label">新品</span><span class="label">特价</span></p>
+							<div class="desc-price">价格：<span class="price">139<small>元</small></span></div>
+						</div>
+						<div class="desc-r">
+							<span class="iconfont icon-chat"></span>
+							121
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#"><img src="../public/images/img750_01.png" alt=""></a>
+					<div class="desc">
+						<div class="desc-l">
+							<p class="desc-title"><span class="descTitle">2016年新品新春特惠专场</span> <span class="label">新品</span><span class="label">特价</span></p>
+							<div class="desc-price">价格：<span class="price">139<small>元</small></span></div>
+						</div>
+						<div class="desc-r">
+							<span class="iconfont icon-chat"></span>
+							121
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#"><img src="../public/images/img750_01.png" alt=""></a>
+					<div class="desc">
+						<div class="desc-l">
+							<p class="desc-title"><span class="descTitle">2016年新品新春特惠专场</span> <span class="label">新品</span><span class="label">特价</span></p>
+							<div class="desc-price">价格：<span class="price">139<small>元</small></span></div>
+						</div>
+						<div class="desc-r">
+							<span class="iconfont icon-chat"></span>
+							121
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<script>
+	    
+	    $(function() {
+
+	      	var results = [
+				{
+					resultName:'2016新款女背带连衣牛仔裙',
+					resultUrl:"#",
+					imgUrl:'../public/images/img750_01.png',
+					price:133,
+					like:32
+				},
+				{
+					resultName:'2016新款女背带连衣牛仔裙',
+					resultUrl:"#",
+					imgUrl:'../public/images/img750_01.png',
+					price:133,
+					like:32
+				},
+				{
+					resultName:'2016新款女背带连衣牛仔裙',
+					resultUrl:"#",
+					imgUrl:'../public/images/img750_01.png',
+					price:133,
+					like:32
+				},
+				{
+					resultName:'2016新款女背带连衣牛仔裙',
+					resultUrl:"#",
+					imgUrl:'../public/images/img750_01.png',
+					price:133,
+					like:32
+				}
+			]
+	    	renderResult("result", results);
+	    	var desc = $(".descTitle").html().toString().substring(0,10) + "...";
+	    	$(".descTitle").html(desc);
+
+	    	setTimeout(function(){
+		      	var myScroll;
+				myScroll = new IScroll('#wrapper', {
+					scrollX: true,
+					click:true
+				});
+	    	}, 300);
+	    });
+
+	</script>
+</body>
+</html>

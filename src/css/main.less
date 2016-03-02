@@ -1,0 +1,61 @@
+@import url(../fonts/iconfont.css);
+/*
+*  html5 doctor css reset | http://html5doctor.com/html-5-reset-stylesheet
+*/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+body{line-height:1;padding:0; margin:0;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}
+ins{background-color:#ff9;color:#000;text-decoration:none}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
+
+html{font-family: 'Microsoft YaHei', '微软雅黑', verdana, Arial, Helvetica, sans-serif;font-size: 10px;height: 100%;}
+body{background-color: #fafafa;height: 100%; color:#444;}
+*, :after, :before{    -webkit-box-sizing: border-box;
+    box-sizing: border-box;}
+a,a:active,a:hover{text-decoration: none; color:#444;}
+
+@primary-color:#fe809f;
+
+.header{height: 45px; border-bottom: 1px solid #ddd; background-color: #f9f9f9; padding:10px 50px; position: relative; color:@primary-color; font-size: 18px; text-align: center; line-height: 25px;}
+.header
+	.icon{font-size: 28px; position: absolute; line-height: 1em;}
+		.icon-l{left: 10px; top: 50%; -webkit-transform: translateY(-50%);
+		   -moz-transform: translateY(-50%);
+		    -ms-transform: translateY(-50%);
+		     -o-transform: translateY(-50%);
+		        transform: translateY(-50%);}
+		.icon-r{right: 10px; top: 50%; -webkit-transform: translateY(-50%);
+		   -moz-transform: translateY(-50%);
+		    -ms-transform: translateY(-50%);
+		     -o-transform: translateY(-50%);
+		        transform: translateY(-50%);}
+.navbar{background-color: #fff; border-bottom: 1px solid #ddd;}
+.navbar:after{content: ''; display:table; clear: both; line-height: 0;}
+.list-nav{padding:0;}
+.list-nav { display: table; width:100%;
+	li{display:table-cell; text-align: center;}
+		a{display:block; padding:10px; text-align: center;}
+		a.icon{padding-left: 30px;background:url(../images/icons/icon-cloth.png) left center no-repeat; background-size: 25px auto;}
+}
+.list-nav
+	li:first-child
+		a{background-image:url(../images/icons/icon-cloth.png);}
+.list-nav
+	li:nth-child(2)
+		a{background-image:url(../images/icons/icon-shoes.png);}
+.list-nav
+	li:nth-child(3)
+		a{background-image:url(../images/icons/icon-lip.png);}
+.list-nav
+	li:nth-child(4)
+		a{background-image:url(../images/icons/icon-chair.png);}
+

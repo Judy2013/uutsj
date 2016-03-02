@@ -1,0 +1,18 @@
+extends layout
+
+block content
+	header.header
+		a.icon.icon-l
+			i.iconfont.icon-arrowleft
+		a.icon.icon-r
+			i.iconfont.icon-zoom
+		span.title 样品团
+	nav.navbar
+		ul.list-nav
+			each nav,i in navs
+				if i == 0
+					li.active
+						a.icon(href="#")=nav
+				else
+					li
+						a.icon(href="#")=nav

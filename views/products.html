@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="renderer" content="webkit">
+	<meta charset="utf-8">
+	<meta http-equiv="X-XA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimum-scale=1.0,maximum-scale=1.0">
+	<link rel="stylesheet" href="../public/css/main.css">
+	<script src="../public/js/jquery.min.js"></script>
+	<script src="../public/js/iscroll-lite.js"></script>
+	<script src="../public/js/handlebars.min.js"></script>
+	<script src="../public/js/main.min.js"></script>
+	<style>
+    #wrapper {
+      top: 91px;
+    }
+  </style>
+</head>
+<body>
+	<header class="header">
+		<a class="icon icon-l" onclick="window.history.go(-1);"> <i class="iconfont icon-arrowleft"></i>
+		</a>
+		<a class="icon icon-r"> <i class="iconfont icon-zoom"></i>
+		</a>
+		<span class="title">样品团</span>
+	</header>
+	<nav class="navbar">
+		<ul class="list-nav" id="nav"></ul>
+	</nav>
+	<div id="wrapper" class="wrapper">
+		<div id="iscroll">
+			<div class="pull-action loading" id="pull-down">
+		        <span class="am-icon-arrow-down pull-label"
+		              id="pull-down-label"> 下拉刷新</span>
+		        <span class="am-icon-spinner am-icon-spin"></span>
+		    </div>
+		    <ul class="list-product" id="events-list">
+				<!-- <li>
+				<div class="item">
+					<a class="imgCon">
+						<img src="../public/images/img357_01.png" alt="">
+					</a>
+					<h4 class="title">2016新款女背带连衣牛仔裙</h4>
+					<div class="editor">
+						<a class="img-circle"><img src="../public/images/img60_01.png" alt=""></a>
+						<span class="editor-name">小编UU</span>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="item">
+					<a class="imgCon">
+						<img src="../public/images/img357_02.png" alt="">
+					</a>
+					<h4 class="title">2016新款女背带连衣牛仔裙</h4>
+					<div class="editor">
+						<a class="img-circle"><img src="../public/images/img60_01.png" alt=""></a>
+						<span class="editor-name">小编UU</span>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="item">
+					<a class="imgCon">
+						<img src="../public/images/img357_03.png" alt="">
+					</a>
+					<h4 class="title">2016新款女背带连衣牛仔裙</h4>
+					<div class="editor">
+						<a class="img-circle"><img src="../public/images/img60_01.png" alt=""></a>
+						<span class="editor-name">小编UU</span>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="item">
+					<a class="imgCon">
+						<img src="../public/images/img357_04.png" alt="">
+					</a>
+					<h4 class="title">2016新款女背带连衣牛仔裙</h4>
+					<div class="editor">
+						<a class="img-circle"><img src="../public/images/img60_01.png" alt=""></a>
+						<span class="editor-name">小编UU</span>
+					</div>
+				</div>
+			</li> -->
+			</ul>
+		    <div class="pull-action" id="pull-up">
+		        <span class="am-icon-arrow-down pull-label"
+		              id="pull-up-label"> 上拉加载更多</span>
+		        <span class="am-icon-spinner am-icon-spin"></span>
+		    </div>
+		</div>
+	</div>
+	<script type="text/x-handlebars-template" id="tpi-list-item">
+	  {{#each this}}
+	  <li>
+			<div class="item">
+				<a class="imgCon" href="details.html">
+					<img src="{{imgUrl}}" alt="">
+				</a>
+				<h4 class="title">{{name}}</h4>
+				<div class="editor">
+					<a class="img-circle"><img src="{{editorImg}}" alt=""></a>
+					<span class="editor-name">{{editor}}</span>
+				</div>
+			</div>
+		</li>
+	  {{/each}}
+	</script>
+	<script>
+	    
+	    $(function() {
+	    	//参照 http://amazeui.org/examples/iscroll.html 提供接口
+	      var app = new EventsList(null, {
+	        api: 'http://www.ocapc.com/a.php',
+	        params: {
+	          start: 100,
+	          type: 'music',
+	          count: 40
+	        }
+	      });
+	      app.init();
+
+	      var navs = [
+	      	{
+	      		lnk:"#",
+	      		cls:'icon-cloth',
+	      		nav:"服饰"
+	      	},
+	      	{
+	      		lnk:"#",
+	      		cls:'icon-shoes',
+	      		nav:"鞋帽"
+	      	},
+	      	{
+	      		lnk:"#",
+	      		cls:'icon-lip',
+	      		nav:"彩妆"
+	      	},
+	      	{
+	      		lnk:"#",
+	      		cls:'icon-chair',
+	      		nav:"家居"
+	      	}
+	      ]
+	      renderNav(navs,function(idx){
+	      	alert(idx);
+	      });
+
+	    });
+
+	</script>
+</body>
+</html>
