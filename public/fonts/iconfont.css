@@ -18,5 +18,8 @@
 .icon-zoom:before { content: "\e600"; }
 .icon-arrowleft:before { content: "\e602"; }
 .icon-cart:before { content: "\e603"; }
+.icon-warning:before { content: "\e601"; }
 .icon-chat:before { content: "\e604"; }
 .icon-share:before { content: "\e605"; }
+.icon-tuan:before { content: "\e606"; }
+.icon-sina:before { content: "\e607"; }
