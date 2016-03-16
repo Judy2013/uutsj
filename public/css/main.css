@@ -62,7 +62,7 @@ a.icon.icon-chair{background-image: url(../images/icons/icon-chair.png);}
 .editor .img-circle img{height: 100%;}
 .wrapper {
       position: absolute;
-      top: 0;
+      top: 45px;
       bottom: 0;
       overflow: hidden;
       margin: 0;
@@ -113,7 +113,7 @@ a.icon.icon-chair{background-image: url(../images/icons/icon-chair.png);}
   z-index: 1;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   width: 1500px;
-  height: 240px;
+  /* height: 240px; */
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
   -ms-transform: translateZ(0);
@@ -129,7 +129,7 @@ a.icon.icon-chair{background-image: url(../images/icons/icon-chair.png);}
   -ms-text-size-adjust: none;
   -o-text-size-adjust: none;
   text-size-adjust: none;
-  background-color: #444;}
+  background-color: #eee;}
 .indicator {
   position: absolute;
   display: inline-block;
@@ -146,7 +146,7 @@ a.icon.icon-chair{background-image: url(../images/icons/icon-chair.png);}
 
 .slide {
   width: 375px;
-  height: 240px;
+  /* height: 240px; */
   float: left;
   overflow:hidden;
 }
@@ -201,10 +201,16 @@ a.icon.icon-chair{background-image: url(../images/icons/icon-chair.png);}
 .ticker{display: inline;}
 .ticker>span{display: inline-block; background-color: #444; color: #fff; padding: 1px 5px; border-radius: 2px; -webkit-border-radius:4px;}
 .text-bottom{color: #fff; text-align: center; white-space: nowrap; display: block; padding: 10px;}
-.block-bottom{padding:30px 15px; background-color:#fff; text-align: center; }
-.form{color: #fff; padding: 50px; padding-bottom: 80px;}
-.form-item{position: relative; padding: 10px 0px 10px 80px;}
-.form-item label{position: absolute; left: 0; top: 10px;}
+.block-bottom{padding:10px 5px 5px; background-color:#fff; text-align: center; }
+.block-bottom img{display: block; margin: 0 auto;}
+.form{color: #fff; padding: 20px; width: 280px; margin: 0 auto;}
+.form-item{position: relative; padding: 10px 0px 10px 80px; display: block;}
+.form-item label{position: absolute; left: 0; top: 10px;left: 0; top: 50%; width: 80px; -webkit-transform: translateY(-50%);
+   -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+     -o-transform: translateY(-50%);
+        transform: translateY(-50%);}
+.form-item label .iconfont{display: block; text-align: center; margin: 0 auto; font-size: 3em;}
 .form-item .form-content{display: block;}
 
 .list-inline>li{display: inline-block; margin: 0 15px;}

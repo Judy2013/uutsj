@@ -21,57 +21,108 @@
 		</a>
 		<span class="title"><img src="../public/images/logo.png" height="25" alt=""></span>
 	</header>
-	<section class="sliderWrapper">
-		<div id="wrapper" class="sliders">
-			<div class="sliderCon" id="scroller"></div>
+	<div id="wrapper" class="wrapper">
+		<div>
+			<section class="sliderWrapper">
+				<div id="slider" class="sliders">
+					<div class="sliderCon" id="scroller"></div>
+				</div>
+				<div class="indicator" id="indicator">
+					<div class="dotty"></div>
+					<ul class="list-indicator" id="indicatorList"></ul>
+				</div>
+			</section>
+			<div class="priceBar">
+				<div class="p-l">
+					<span class="desc" id="desc">2016新款女背带连衣牛仔裙2016新款女背带连衣牛仔裙2016新款女背带连衣牛仔裙</span>
+					<span class="price">￥59</span>
+				</div>
+				<a class="p-r"><span class="iconfont icon-cart"></span>购买链接</a>
+			</div>
+			<div class="product-details">
+				<p>加绒裤清仓，历史超低价！快递最后一天发货啦，库存有限，有需要的妹纸赶紧下手吧黑色打底裤秋冬加厚加绒外穿高腰弹力</p>
+				<img src="../public/images/details01.png" alt="">
+				<p>加绒裤清仓，历史超低价！快递最后一天发货啦，库存有限，有需要的妹纸赶紧下手吧</p>
+				<img src="../public/images/details02.png" alt="">
+			</div>
+			<nav class="titlebar text-center">
+				<span class="text-pink">你可能也喜欢</span>
+			</nav>
+			<div>
+			    <ul class="list-product" id="products-list"></ul>
+			</div>
+			<h4 class="page-header mb30"><span>已经到底了</span></h4>
 		</div>
-		<div class="indicator" id="indicator">
-			<div class="dotty"></div>
-			<ul class="list-indicator" id="indicatorList"></ul>
-		</div>
-	</section>
-	<div class="priceBar">
-		<div class="p-l">
-			<span class="desc" id="desc">2016新款女背带连衣牛仔裙2016新款女背带连衣牛仔裙2016新款女背带连衣牛仔裙</span>
-			<span class="price">￥59</span>
-		</div>
-		<a class="p-r"><span class="iconfont icon-cart"></span>购买链接</a>
 	</div>
-	<div class="product-details">
-		<p>加绒裤清仓，历史超低价！快递最后一天发货啦，库存有限，有需要的妹纸赶紧下手吧黑色打底裤秋冬加厚加绒外穿高腰弹力</p>
-		<img src="../public/images/details01.png" alt="">
-		<p>加绒裤清仓，历史超低价！快递最后一天发货啦，库存有限，有需要的妹纸赶紧下手吧</p>
-		<img src="../public/images/details02.png" alt="">
-	</div>
-	<nav class="titlebar text-center">
-		<span class="text-pink">你可能也喜欢</span>
-	</nav>
-	<div>
-	    <ul class="list-product" id="products-list"></ul>
-	</div>
-	<h4 class="page-header mb30"><span>已经到底了</span></h4>
 	<script>
 	    
 	    $(function() {
 	    	var desc = $("#desc").html().toString().substring(0,20) + "...";
 	    	$("#desc").html(desc);
-	      var slider = [
-	      	{
-	      		imgUrl:"../public/images/img750_01.png"
-	      	},
-	      	{
-	      		imgUrl:"../public/images/img750_01.png"
-	      	},
-	      	{
-	      		imgUrl:"../public/images/img750_01.png"
-	      	},
-	      	{
-	      		imgUrl:"../public/images/img750_01.png"
-	      	}
-	      ]
-	      renderSlider("scroller","indicator",slider);
 
-	      var products = [
+	    	//幻灯片
+		    var slider = [
+		      	{
+		      		imgUrl:"../public/images/img750_01.png",
+		      		imgLink:"###"
+		      	},
+		      	{
+		      		imgUrl:"../public/images/img750_01.png",
+		      		imgLink:"###"
+		      	},
+		      	{
+		      		imgUrl:"../public/images/img750_01.png",
+		      		imgLink:"###"
+		      	},
+		      	{
+		      		imgUrl:"../public/images/img750_01.png",
+		      		imgLink:"###"
+		      	},
+		      	{
+		      		imgUrl:"../public/images/img750_01.png",
+		      		imgLink:"###"
+		      	}
+		    ]
+		    renderSlider("scroller","indicator",slider);
+
+		    var mySlider, idx = 0, timer;
+			mySlider = new IScroll('#slider', {
+				scrollX: true,
+				scrollY: false,
+				momentum: false,
+				snap: true,
+				snapSpeed: 400,
+				keyBindings: true,
+				bounceEasing: 'quadratic',
+				indicators: {
+					el: document.getElementById('indicator'),
+					resize: false
+				}
+			});
+			timer = setInterval(startScroll, 3000);
+			mySlider.on('scrollEnd', function() {
+				idx = ($('.dotty').offset().left - $('.indicator').offset().left)/36;
+				return idx;
+			})
+			function startScroll() {  
+                idx++;  
+                if (idx == $("#slider .slide").length) { //当滚动到最后一张，回到第一张  
+                    mySlider.goToPage(0, 0, 600); //回第一页  
+                    i = 0;  
+                } else {  
+                    mySlider.next(); //滚到下一页  
+                }  
+            }
+            $("#slider").on('mousedown', function(event) {
+            	event.preventDefault();
+            	clearInterval(timer);
+            }).on('mouseup', function(event) {
+            	event.preventDefault();
+            	timer = setInterval(startScroll, 3000);
+            });
+
+            //产品列表
+	      	var products = [
 				{
 					name:'2016新款女背带连衣牛仔裙',
 					productUrl:"#",
@@ -101,22 +152,16 @@
 					editorImg:"../public/images/img60_01.png"
 				}
 			]
-	      renderList("products-list",products);
+	      	renderList("products-list",products);
 
-		    var myScroll;
-			myScroll = new IScroll('#wrapper', {
-				scrollX: true,
-				scrollY: false,
-				momentum: false,
-				snap: true,
-				snapSpeed: 400,
-				keyBindings: true,
-				indicators: {
-					el: document.getElementById('indicator'),
-					resize: false
-				}
-			});
-
+	      	//上下滚动效果
+	    	setTimeout(function(){
+		      	var myScroll;
+				myScroll = new IScroll('#wrapper', {
+					scrollX: true,
+					click:true
+				});
+	    	}, 300);
 	    });
 
 	</script>
